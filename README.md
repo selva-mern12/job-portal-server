@@ -194,6 +194,7 @@ Ensure you have **Node.js** installed on your machine.
   ```
 
 #### Delete Applied Job (Authenticated)
+
 - **Endpoint:** `DELETE /job/applied/delete/:apply_id`
 - **Headers:**
   ```
