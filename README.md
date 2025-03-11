@@ -36,7 +36,7 @@ Ensure you have **Node.js** installed on your machine.
    ```
 3. Create a `.env` file in the root directory and add:
    ```env
-   JWT_SECRET=your_secret_key
+   JWT_SECRET=your_secret_key (use your self)
    ```
 4. Start the server:
    ```sh
@@ -51,9 +51,9 @@ Ensure you have **Node.js** installed on your machine.
 - **Request Body:**
   ```json
   {
-    "username": "john_doe",
-    "email": "john@example.com",
-    "password": "securepassword"
+    "username": "selva_1201",
+    "email": "selva@example.com",
+    "password": "selva@MERN1201" 
   }
   ```
 - **Response:**
@@ -66,8 +66,8 @@ Ensure you have **Node.js** installed on your machine.
 - **Request Body:**
   ```json
   {
-    "email": "john@example.com",
-    "password": "securepassword"
+    "email": "selva@example.com",
+    "password": "selva@MERN1201"
   }
   ```
 - **Response:**
@@ -75,7 +75,7 @@ Ensure you have **Node.js** installed on your machine.
   {
     "message": "Login successful",
     "user_id": "user123",
-    "username": "john_doe",
+    "username": "selva_1201",
     "token": "jwt_token"
   }
   ```
@@ -133,7 +133,7 @@ Ensure you have **Node.js** installed on your machine.
   ```json
   {
     "company_name": "Updated Tech Corp",
-    "monthly_salary": "6000"
+    "monthly_salary": "60000"
   }
   ```
 - **Response:**
