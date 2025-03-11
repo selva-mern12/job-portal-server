@@ -1,0 +1,52 @@
+POST http://localhost:3005/register
+Content-Type: application/json
+
+{
+    "username": "selva_1201",
+    "email": "selva.mern12@gmail.com",
+    "password": "selva@1201"
+}
+
+###
+
+POST http://localhost:3005/login
+Content-Type: application/json
+
+{
+    "email": "selva.mern12@gmail.com",
+    "password": "selva@1201"
+}
+
+###
+POST http://localhost:3005/job/add
+Content-Type: application/json
+
+{
+    "user_id": "2184e068-418c-499a-960e-9ceed68f853a",
+    "company_name": "Uber",
+    "logo_url": "https://upload.wikimedia.org/wikipedia/commons/c/cc/Uber_logo_2018.svg",
+    "job_position": "Android Developer",
+    "monthly_salary": "11800",
+    "job_type": "Full-time",
+    "remote_office": "Remote",
+    "location": "San Francisco, CA",
+    "job_description": "Develop Android applications to enhance ride-sharing experience.",
+    "about_company": "Uber is a mobility as a service company.",
+    "skills_required": "Kotlin, Java, Android Studio",
+    "additional_info": "Annual bonuses"
+}
+
+###
+
+GET http://localhost:3005/job/get
+
+###
+
+PUT http://localhost:3005/job/update/fecaf1c2-ffa4-4bf9-9d76-51c5a34b3f9d
+Content-Type: application/json
+
+{"job_posted" : "10-03-2025"}
+
+###
+
+DELETE http://localhost:3005/job/delete/612b9141-e56d-474c-92d3-6ebabc158092
