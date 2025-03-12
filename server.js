@@ -197,9 +197,9 @@ app.get('/job/get', async (req, res) => {
 
 
 // Update Job
-app.put('/job/update/:id', Authenticate, async (req, res) => {
+app.put('/job/update/:cmpyName', Authenticate, async (req, res) => {
     try {
-        const { id } = req.params;
+        const { cmpyName } = req.params;
         const { 
             company_name,
             logo_url, 
@@ -235,9 +235,9 @@ app.put('/job/update/:id', Authenticate, async (req, res) => {
             return res.status(400).json({ error: "No fields provided for update" });
         }
 
-        values.push(id); // Add job_id to values array
+        values.push(cmpyName); 
 
-        const jobUpdateQuery = `UPDATE job_list SET ${updateFields.join(', ')} WHERE job_id = ?`;
+        const jobUpdateQuery = `UPDATE job_list SET ${updateFields.join(', ')} WHERE company_name = ?`;
         await db.run(jobUpdateQuery, values);
         
         res.json({ message: 'Job updated successfully' });
