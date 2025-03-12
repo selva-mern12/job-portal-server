@@ -20,21 +20,27 @@ Content-Type: application/json
 ###
 POST http://localhost:3005/job/add
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI3YmY5ZDcwMS1jZmY1LTQyODUtYjUyYS00OGRmMjMzMmQxMjkiLCJpYXQiOjE3NDE3ODk5MDMsImV4cCI6MTc0MjY1MzkwM30.k0N2Zm-Y91r6Lm4c7CzzRlt2ubSfQdRkp23TNPa4GMY
 
-{
-    "user_id": "2184e068-418c-499a-960e-9ceed68f853a",
-    "company_name": "Uber",
-    "logo_url": "https://upload.wikimedia.org/wikipedia/commons/c/cc/Uber_logo_2018.svg",
-    "job_position": "Android Developer",
-    "monthly_salary": "11800",
+  {
+    "user_id": "7bf9d701-cff5-4285-b52a-48df2332d129",
+    "company_name": "Mahindra & Mahindra",
+    "logo_url": "https://upload.wikimedia.org/wikipedia/commons/e/e0/Mahindra_%26_Mahindra_Logo.svg",
+    "job_position": "Automobile Engineer",
+    "monthly_salary": "₹85,000",
     "job_type": "Full-time",
-    "remote_office": "Remote",
-    "location": "San Francisco, CA",
-    "job_description": "Develop Android applications to enhance ride-sharing experience.",
-    "about_company": "Uber is a mobility as a service company.",
-    "skills_required": "Kotlin, Java, Android Studio",
-    "additional_info": "Annual bonuses"
-}
+    "remote_office": "Office",
+    "location": "Chennai, Tamil Nadu",
+    "job_description": "Design and develop automobile components, work on electric vehicle technology.",
+    "about_company": "Mahindra & Mahindra is India's top automobile manufacturer.",
+    "skills_required": "Automobile Engineering, CAD, MATLAB, EV Technology",
+    "additional_info": "Experience in electric vehicle development preferred.",
+    "job_posted": "13-03-2025"
+  }
+###
+[,,,,
+]
+
 
 ###
 

@@ -169,6 +169,7 @@ app.post('/job/add', Authenticate, async (req, res) => {
     }
 });
 
+
 // Get All Jobs
 app.get('/job/get', async (req, res) => {
     const { jobId, page = 1 } = req.query; 
