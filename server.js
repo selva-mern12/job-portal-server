@@ -8,6 +8,7 @@ const cors = require('cors');
 const {v4 : uuidv4} = require('uuid')
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
+const { off } = require('process');
 
 const app = express();
 app.use(express.json()); 
@@ -170,16 +171,29 @@ app.post('/job/add', Authenticate, async (req, res) => {
 
 // Get All Jobs
 app.get('/job/get', async (req, res) => {
-    const {jobId} = req.query
-    const filter = jobId ? 'WHERE job_id=? ' : ''
+    const { jobId, page = 1 } = req.query; 
+    const limit = 10;
+    const offset = (page - 1) * limit;
+
     try {
-        const getJobQuery = `SELECT * FROM job_list ${filter};`;
-        const getJob = await db.all(getJobQuery, [jobId]);
-        res.status(201).json(getJob)
+        if (jobId) {
+            const getJobQuery = `SELECT * FROM job_list WHERE job_id = ?;`;
+            const getJob = await db.get(getJobQuery, [jobId]);
+            res.status(200).json(getJob);
+        } else {
+            const getJobQuery = `SELECT * FROM job_list LIMIT ? OFFSET ?;`;
+            const getJob = await db.all(getJobQuery, [limit, offset]);
+            const countQuery = `SELECT COUNT(*) AS total FROM job_list;`;
+            const countResult = await db.get(countQuery);
+            totalJobs = countResult.total;
+
+            res.status(200).json({jobs: getJob, totalPages: Math.ceil(totalJobs / limit) });
+        }
     } catch (error) {
         res.status(500).json({ error: 'Error fetching jobs' });
     }
 });
+
 
 // Update Job
 app.put('/job/update/:id', Authenticate, async (req, res) => {
